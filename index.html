@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Destination Locations in India</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="navbar.css">
+</head>
+<body>
+    <section>
+        <div class="video" id="slideshow">
+            <video src="Manali_edited.mp4" autoplay muted loop class="active"></video>
+            <video src="Lakshwadeep_edited.mp4" autoplay muted loop></video>
+            <video src="Jaiselmer_Edited_droneshots.mp4" autoplay muted loop></video>
+            <video src="Kerala_edited.mp4" autoplay muted loop></video>
+        </div>
+        <div class="container">
+            <header id="nav">
+                <a href="#" class="logo">India</a>
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">Destination</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+                <span class="menu" onclick="togglemenu();"></span>
+            </header>
+            <div class="content">
+                <div class="banner" id="slideshowtext">
+                    <div class="active">
+                        <h2>Manali</h2>
+                        <p>A gift of the Himalayas to the world, Manali is a beautiful township nestled in the picturesque Beas River valley.
+                            Besides natural charm and unparalleled beauty, Manali is known for its unlimited adventure opportunities, the famous Hadimba Temple, the scenic Rohtang Pass, the snow-laden Solang Valley and its delightful culinary scene.
+                        </p>
+                    </div>
+                    <div>
+                        <h2>Lakshadweep</h2>
+                        <p>What is the beauty of Lakshadweep?
+                            Image result for lakshadweep in few lines
+                            One can never get enough of the Lakshadweep Islands, without leaving with a feeling of coming back again. 
+                            This is a group of 36 islands, well known for its exotic and sun-kissed beaches, an abode of bewitching landscapes, and an experience to dive into the underwater beauty of the sea.</p>
+                    </div>
+                    <div>
+                        <h2>Jaisalmer</h2>
+                        <p>Jaisalmer is sometimes called the "Golden City of India" because the yellow sandstone used throughout the architecture of both the fort and the town below, imbues both with a certain golden-yellow light.
+                            Travelers come to Jaisalmer to explore the Havelis that Jaisalmer is famous for. But the majority of them also want to experience desert life, camel safari and the excitement of sand dunes.
+                        </p>
+                    </div>
+                    <div>
+                        <h2>Munnar</h2>
+                        <p>Munnar is situated at the confluence of three mountain streams namely Muthirapuzha, Nallathanni and Kundala. The word 'Munnar' means three rivers in Malayalam.
+                            Unending expanse of tea plantations pristine valleys and mountains exotic species of flora and fauna in its wild sanctuaries and forests aroma of spice scented cool air.
+                            It's the place you would love to visit it's the place you would wish never to leave.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <ul class="sci">
+                <li><a href="#"><img src="facebook.png"></a></li>
+                <li><a href="#"><img src="twitter.png"></a></li>
+                <li><a href="#"><img src="instagram.png"></a></li>
+               
+            </ul>
+            <ul class="controls">
+                <li onclick="prevslide();prevslideText();"><img src="left.png"></li>
+                <li onclick="nextslide();nextslideText()"><img src="right.png"></li>
+            </ul>
+        </div>
+    </section>
+    <script>
+        const slideshow=document.getElementById('slideshow');
+        const slides=slideshow.getElementsByTagName('video');
+        var ind=0;
+        function nextslide(){
+            slides[ind].classList.remove('active');
+            ind = (ind+1)%slides.length;
+            slides[ind].classList.add('active');
+        }
+        function prevslide(){
+            slides[ind].classList.remove('active');
+            ind = (ind-1+slides.length)%slides.length;
+            slides[ind].classList.add('active');
+        }
+
+        const slideshowtext=document.getElementById('slideshowtext')
+        const slidestext=slideshowtext.getElementsByTagName('div')
+        var ind2=0;
+        function nextslideText(){
+            slidestext[ind2].classList.remove('active');
+            ind2 = (ind2+1)%slidestext.length;
+            slidestext[ind2].classList.add('active');
+        }
+        function prevslideText(){
+            slidestext[ind2].classList.remove('active');
+            ind2 = (ind2-1+slidestext.length)%slidestext.length;
+            slidestext[ind2].classList.add('active');
+        }
+        function togglemenu(){
+            const menu=document.querySelector('.menu');
+            const navbar=document.getElementById('nav');
+            menu.classList.toggle('active');
+            navbar.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
